@@ -5,23 +5,8 @@ import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import { Navbar, Footer, Sidebar } from "./components";
 import {
-  // Ecommerce,
-  Runscrap,
-  // Orders,
-  // Calendar,
-  // Employees,
-  // Stacked,
-  // Pyramid,
-  // Customers,
-  // Kanban,
-  // Line,
-  // Area,
-  // Bar,
-  // Pie,
-  // Financial,
-  // ColorPicker,
-  // ColorMapping,
-  // Editor,
+  Scholar,
+  Scopus,
 } from "./pages";
 import "./App.css";
 
@@ -48,7 +33,7 @@ const App = () => {
   // }, []);
 
   return (
-    <div className="dark">
+    <div className="white">
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           {activeMenu ? (
@@ -75,30 +60,9 @@ const App = () => {
 
               <Routes>
                 {/* dashboard  */}
-                <Route path="/" element={<Runscrap />} />
-                <Route path="/setting" element={<Runscrap />} />
-
-                {/* pages  */}
-                {/* <Route path="/ecommerce" element={<Ecommerce />} />
-                <Route path="/orders" element={<Orders />} />
-                <Route path="/employees" element={<Employees />} />
-                <Route path="/customers" element={<Customers />} /> */}
-
-                {/* apps  */}
-                {/* <Route path="/kanban" element={<Kanban />} />
-                <Route path="/editor" element={<Editor />} />
-                <Route path="/calendar" element={<Calendar />} />
-                <Route path="/color-picker" element={<ColorPicker />} /> */}
-
-                {/* charts  */}
-                {/* <Route path="/line" element={<Line />} />
-                <Route path="/area" element={<Area />} />
-                <Route path="/bar" element={<Bar />} />
-                <Route path="/pie" element={<Pie />} />
-                <Route path="/financial" element={<Financial />} />
-                <Route path="/color-mapping" element={<ColorMapping />} />
-                <Route path="/pyramid" element={<Pyramid />} />
-                <Route path="/stacked" element={<Stacked />} /> */}
+                <Route path="/" element={<Scholar />} />
+                <Route path="/Scholar" element={<Scholar />} />
+                <Route path="/Scopus" element={<Scopus />} />
               </Routes>
             </div>
             <Footer />
