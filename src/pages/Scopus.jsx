@@ -5,8 +5,10 @@ const Scopus = () => {
   const [loadingScopus, setLoadingScopus] = useState(false);
   const [loadingAuthor, setLoadingAuthor] = useState(false);
   const [loadingArticle, setLoadingArticle] = useState(false);
+  const [loadingAllArticle, setLoadingAllArticle] = useState(false);
   const [loadingJournal, setLoadingJournal] = useState(false);
   const [authorscopusId, setAuthorScupusId] = useState("");
+  const [scopusId, setScupusId] = useState("");
   const [eid, setEid] = useState("");
   const [sourceId, setSourceId] = useState("");
   const [terminalOutput, setTerminalOutput] = useState("");
@@ -18,6 +20,8 @@ const Scopus = () => {
       setLoadingAuthor(true);
     } else if (api === "article") {
       setLoadingArticle(true);
+    } else if (api === "allArticle") {
+      setLoadingAllArticle(true);
     } else {
       setLoadingJournal(true);
     }
@@ -29,6 +33,8 @@ const Scopus = () => {
       url = `http://localhost:8000/scraper/scraper-author-scopus/?scopus_id=${authorscopusId}`;
     } else if (api === "article") {
       url = `http://localhost:8000/scraper/scraper-article-scopus/?eid=${eid}`;
+    } else if (api === "allArticle") {
+      url = `http://localhost:8000/scraper/scraper-articleOfauthor-scopus?scopus_id=${scopusId}` //8148419700
     } else {
       url = `http://localhost:8000/scraper/scraper-journal-scopus/?source_id=${sourceId}`;
     }
@@ -51,7 +57,9 @@ const Scopus = () => {
         setLoadingAuthor(false);
       } else if (api === "article") {
         setLoadingArticle(false);
-      } else {
+      } else if (api === "allArticle") {
+        setLoadingAllArticle(false);
+      }else {
         setLoadingJournal(false);
       }
     }
@@ -70,7 +78,7 @@ const Scopus = () => {
               <div className="mt-3">
                 <button
                   className={`text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2`}
-                  onClick={() => handleButtonClick("scholar")}
+                  onClick={() => handleButtonClick("scopus")}
                   disabled={loadingScopus}
                 >
                   {loadingScopus ? (
@@ -88,7 +96,7 @@ const Scopus = () => {
         </div>
       </div>
       <div className="flex flex-wrap justify-center">
-        <div className="w-1/3 bg-indigo-200 flex flex-col rounded-lg p-7 m-2">
+        <div className="w-1/3 bg-cyan-200 flex flex-col rounded-lg p-7 m-2">
           <div className="flex justify-between">
             <p className="text-xl font-semibold">Author Data</p>
           </div>
@@ -128,7 +136,50 @@ const Scopus = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/3 bg-blue-200 flex flex-col rounded-lg p-7 m-2">
+        <div className="w-1/3 bg-cyan-200 flex flex-col rounded-lg p-7 m-2">
+          <div className="flex justify-between">
+            <p className="text-xl font-semibold">All Article Data</p>
+          </div>
+          <div className="mt-0">
+            <div className="mt-3">
+              <p className="font-semibold text-lg">Run Scraper To Get All Article Scopus</p>
+              <div className="mt-3">
+                <form className="w-full max-w-sm">
+                  <div className="flex items-center border-b border-teal-500 py-2">
+                    <input
+                      id="scholarIdInput"
+                      className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                      type="text"
+                      placeholder="Enter Scopus ID"
+                      aria-label="author"
+                      value={scopusId}
+                      onChange={(e) => setScupusId(e.target.value)}
+                    />
+                    <button
+                      className={`flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded`}
+                      type="button"
+                      onClick={() => handleButtonClick("allArticle")}
+                      disabled={loadingAllArticle}
+                    >
+                      {loadingAllArticle ? (
+                        <div className="flex items-center justify-center">
+                          <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white"></div>
+                          <span className="ml-2">Loading...</span>
+                        </div>
+                      ) : (
+                        "Run"
+                      )}
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div className="w-1/3 bg-red-100 flex flex-col rounded-lg p-7 m-2">
           <div className="flex justify-between">
             <p className="text-xl font-semibold">Article Data</p>
           </div>
@@ -168,7 +219,7 @@ const Scopus = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/3 bg-blue-200 flex flex-col rounded-lg p-7 m-2">
+        <div className="w-1/3 bg-teal-100 flex flex-col rounded-lg p-7 m-2">
           <div className="flex justify-between">
             <p className="text-xl font-semibold">Journal Data</p>
           </div>
@@ -213,7 +264,7 @@ const Scopus = () => {
         <div className="flex flex-wrap justify-center">
           <div className="w-2/3 bg-black text-white rounded-lg p-6 m-2">
             <p className="text-lg font-semibold pb-2">Output:</p>
-            {loadingScopus || loadingAuthor || loadingArticle || loadingJournal ? (
+            {loadingScopus || loadingAuthor || loadingArticle || loadingAllArticle || loadingJournal ? (
               <div className="flex items-center justify-center">
                 <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white"></div>
                 <span className="ml-2">Loading...</span>
