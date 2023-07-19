@@ -58,7 +58,7 @@ const Scholar = () => {
           </div>
           <div className="mt-0">
             <div className="mt-3">
-              <p className="font-semibold text-lg">Run Scraper To Get All Data From Google Scholar</p>
+              <p className="font-semibold text-lg">Run scraper to get all data from google scholar</p>
               <div className="mt-3">
                 <button
                   className={`text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2`}
@@ -86,7 +86,7 @@ const Scholar = () => {
           </div>
           <div className="mt-0">
             <div className="mt-3">
-              <p className="font-semibold text-lg">Run Scraper To Get Author Scholar</p>
+              <p className="font-semibold text-lg">Run scraper to get authors</p>
               <div className="mt-3">
                 <form className="w-full max-w-sm">
                   <div className="flex items-center border-b border-teal-500 py-2">
@@ -126,7 +126,7 @@ const Scholar = () => {
           </div>
           <div className="mt-0">
             <div className="mt-3">
-              <p className="font-semibold text-lg">Run Scraper To Get Article Scholar</p>
+              <p className="font-semibold text-lg">Run scraper to get articles</p>
               <div className="mt-3">
                 <form className="w-full max-w-sm">
                   <div className="flex items-center border-b border-teal-500 py-2">

@@ -102,7 +102,7 @@ const Scopus = () => {
           </div>
           <div className="mt-0">
             <div className="mt-3">
-              <p className="font-semibold text-lg">Run Scraper To Get Author Scopus</p>
+              <p className="font-semibold text-lg">Run scraper to get Authors</p>
               <div className="mt-3">
                 <form className="w-full max-w-sm">
                   <div className="flex items-center border-b border-teal-500 py-2">
@@ -142,7 +142,7 @@ const Scopus = () => {
           </div>
           <div className="mt-0">
             <div className="mt-3">
-              <p className="font-semibold text-lg">Run Scraper To Get All Article Scopus</p>
+              <p className="font-semibold text-lg">Run scraper to get all articles</p>
               <div className="mt-3">
                 <form className="w-full max-w-sm">
                   <div className="flex items-center border-b border-teal-500 py-2">
@@ -185,7 +185,7 @@ const Scopus = () => {
           </div>
           <div className="mt-0">
             <div className="mt-3">
-              <p className="font-semibold text-lg">Run Scraper To Get Article Scopus</p>
+              <p className="font-semibold text-lg">Run scraper to get a specific article</p>
               <div className="mt-3">
                 <form className="w-full max-w-sm">
                   <div className="flex items-center border-b border-teal-500 py-2">
@@ -225,7 +225,7 @@ const Scopus = () => {
           </div>
           <div className="mt-0">
             <div className="mt-3">
-              <p className="font-semibold text-lg">Run Scraper To Get Journal Scopus</p>
+              <p className="font-semibold text-lg">Run scraper to get journals</p>
               <div className="mt-3">
                 <form className="w-full max-w-sm">
                   <div className="flex items-center border-b border-teal-500 py-2">
