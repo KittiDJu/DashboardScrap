@@ -1,10 +1,10 @@
 
 export const links = [
   {
-    title: 'Dashboard', 
+    title: 'Setting', 
     links: [
       {
-        name: 'Scholar',
+        name: 'GoogleScholar',
       },
       {
         name: 'Scopus',

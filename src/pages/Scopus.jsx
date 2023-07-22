@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactJson from "react-json-view";
+import scopusLogo from "../data/img/Scopus.png";
 
 const Scopus = () => {
   const [loadingScopus, setLoadingScopus] = useState(false);
@@ -59,7 +60,7 @@ const Scopus = () => {
         setLoadingArticle(false);
       } else if (api === "allArticle") {
         setLoadingAllArticle(false);
-      }else {
+      } else {
         setLoadingJournal(false);
       }
     }
@@ -73,6 +74,11 @@ const Scopus = () => {
             <p className="text-xl font-semibold">Scopus</p>
           </div>
           <div className="mt-0">
+            <img
+              className="w-48 h-20 rounded-lg float-right mt-3 ml-3"
+              src={scopusLogo}
+              alt="Google Scholar Logo"
+            />
             <div className="mt-3">
               <p className="font-semibold text-lg">Run scraper to get all data from scopus</p>
               <div className="mt-3">

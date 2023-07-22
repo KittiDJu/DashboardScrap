@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactJson from "react-json-view";
+import scholarLogo from "../data/img/scholar.png";
 
 const Scholar = () => {
   const [loadingScholar, setLoadingScholar] = useState(false);
@@ -57,6 +58,11 @@ const Scholar = () => {
             <p className="text-xl font-semibold">Google Scholar</p>
           </div>
           <div className="mt-0">
+            <img
+              className="w-48 h-20 rounded-lg float-right mt-3 ml-3" 
+              src={scholarLogo}
+              alt="Google Scholar Logo"
+            />
             <div className="mt-3">
               <p className="font-semibold text-lg">Run scraper to get all data from google scholar</p>
               <div className="mt-3">

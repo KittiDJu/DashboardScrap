@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Navbar, Footer, Sidebar } from "./components";
 import {
-  Scholar,
+  Google_Scholar,
   Scopus,
 } from "./pages";
 import "./App.css";
@@ -15,15 +15,6 @@ const App = () => {
   const {
     activeMenu,
   } = useStateContext();
-
-  // useEffect(() => {
-  //   // const currentThemeColor = localStorage.getItem("colorMode");
-  //   // conif (currentThemeColor && currentThemeMode) {
-  //     setCurrentColor(currentThemeColor);
-  //     setCurrentMode(currentThemeMode);
-  //   }st currentThemeMode = localStorage.getItem("themeMode");
-    
-  // }, []);
 
   return (
     <div className="white">
@@ -49,12 +40,10 @@ const App = () => {
               <Navbar />
             </div>
             <div>
-              {/* {themeSettings && <ThemeSettings />} */}
-
               <Routes>
                 {/* dashboard  */}
-                <Route path="/" element={<Scholar />} />
-                <Route path="/Scholar" element={<Scholar />} />
+                <Route path="/" element={<Google_Scholar />} />
+                <Route path="/GoogleScholar" element={<Google_Scholar />} />
                 <Route path="/Scopus" element={<Scopus />} />
               </Routes>
             </div>
