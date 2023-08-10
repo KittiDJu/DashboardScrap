@@ -9,6 +9,12 @@ export const links = [
       {
         name: 'Scopus',
       },
+      {
+        name: 'SetDB',
+      },
+      {
+        name: 'SetURL',
+      },
     ],
   },
 ];
