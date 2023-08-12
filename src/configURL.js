@@ -1,2 +1,2 @@
-const configURL = "http://localhost:8000/";
+const configURL = "https://scrap-backend.vercel.app/";
 export default configURL;
