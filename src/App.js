@@ -6,8 +6,7 @@ import { Navbar, Footer, Sidebar } from "./components";
 import {
   Google_Scholar,
   Scopus,
-  SetDB,
-  SetUrl
+  SettingPage,
 } from "./pages";
 import "./App.css";
 
@@ -47,8 +46,7 @@ const App = () => {
                 <Route path="/" element={<Google_Scholar />} />
                 <Route path="/GoogleScholar" element={<Google_Scholar />} />
                 <Route path="/Scopus" element={<Scopus />} />
-                <Route path="/SetDB" element={<SetDB />} />
-                <Route path="/SetUrl" element={<SetUrl />} />
+                <Route path="/Setting" element={<SettingPage />} />
               </Routes>
             </div>
             <Footer />
