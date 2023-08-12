@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ReactJson from "react-json-view";
+// import ReactJson from "react-json-view";
 
 import cronstrue from 'cronstrue';
 
@@ -19,7 +19,7 @@ const SettingPage = () => {
     const [cronValue, setCronValue] = useState("");
     const [cronError, setCronError] = useState("");
 
-    const [terminalOutput, setTerminalOutput] = useState("");
+    // const [terminalOutput, setTerminalOutput] = useState("");
 
     const [fetchbaseURL, setfetchbaseURL] = useState("");
     const [fetchDBbaseURI, setfetchDBbaseURI] = useState("");
@@ -71,10 +71,10 @@ const SettingPage = () => {
 
                         const data = await response.json();
                         console.log(data);
-                        setTerminalOutput(JSON.stringify(data, null, 2));
+                        // setTerminalOutput(JSON.stringify(data, null, 2));
                     } catch (error) {
                         console.error(error);
-                        setTerminalOutput(JSON.stringify(error, null, 2));
+                        // setTerminalOutput(JSON.stringify(error, null, 2));
                     }
                 } else if (result.isDenied) {
                     Swal.fire('Changes are not saved', '', 'info')
@@ -118,10 +118,10 @@ const SettingPage = () => {
 
                         setfetchDBbaseURI({ ...fetchDBbaseURI, url: databaseURI });
 
-                        setTerminalOutput(JSON.stringify(data, null, 2));
+                        // setTerminalOutput(JSON.stringify(data, null, 2));
                     } catch (error) {
                         console.error(error);
-                        setTerminalOutput(JSON.stringify(error, null, 2));
+                        // setTerminalOutput(JSON.stringify(error, null, 2));
                     }
                 } else if (result.isDenied) {
                     Swal.fire('Changes are not saved', '', 'info')
@@ -165,10 +165,10 @@ const SettingPage = () => {
 
                         setfetchCron({ ...fetchCron, cron: cronValue });
 
-                        setTerminalOutput(JSON.stringify(data, null, 2));
+                        // setTerminalOutput(JSON.stringify(data, null, 2));
                     } catch (error) {
                         console.error(error);
-                        setTerminalOutput(JSON.stringify(error, null, 2));
+                        // setTerminalOutput(JSON.stringify(error, null, 2));
                     }
                 } else if (result.isDenied) {
                     Swal.fire('Changes are not saved', '', 'info')
@@ -306,7 +306,7 @@ const SettingPage = () => {
                 </div>
             </div>
 
-            <div className="mt-5">
+            {/* <div className="mt-5">
                 <div className="flex flex-wrap justify-center">
                     <div className="w-2/3 bg-black text-white rounded-lg p-6 m-2">
                         <p className="text-lg font-semibold pb-2">Output:</p>
@@ -323,7 +323,7 @@ const SettingPage = () => {
                         )}
                     </div>
                 </div>
-            </div>
+            </div> */}
 
         </div>
     );
