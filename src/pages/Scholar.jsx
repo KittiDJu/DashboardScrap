@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactJson from "react-json-view";
 import scholarLogo from "../data/img/scholar.png";
+import configURL from '../configURL'
 
 const Scholar = () => {
   const [loadingScholar, setLoadingScholar] = useState(false);
@@ -21,11 +22,11 @@ const Scholar = () => {
 
     let url = "";
     if (api === "scholar") {
-      url = `http://localhost:8000/scraper/scholar`;
+      url = `${configURL}scraper/scholar`;
     } else if (api === "author") {
-      url = `http://localhost:8000/scraper/scraper-author-scholar?id=${authorscholarId}`;
+      url = `${configURL}scraper/scraper-author-scholar?id=${authorscholarId}`;
     } else {
-      url = `http://localhost:8000/scraper/scraper-article-scholar?id=${articlescholarId}`;
+      url = `${configURL}scraper/scraper-article-scholar?id=${articlescholarId}`;
     }
 
     try {

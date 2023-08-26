@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactJson from "react-json-view";
+import configURL from '../configURL'
 
 const SettingPage = () => {
   const [databaseURI, setdatabaseURI] = useState("");
@@ -9,7 +10,7 @@ const SettingPage = () => {
   const handleSaveClick = async () => {
     if (databaseURI) {
       console.log("Sending:", databaseURI);
-      const url = "http://localhost:8000/conectionDB/connect-to-mongodb";
+      const url = `${configURL}conectionDB/connect-to-mongodb`;
       try {
         const response = await fetch(url, {
           method: "POST",

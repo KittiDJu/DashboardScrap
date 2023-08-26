@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ReactJson from "react-json-view";
 import scopusLogo from "../data/img/Scopus.png";
+import configURL from '../configURL'
+import Textarea from '@mui/joy/Textarea';
 
 const Scopus = () => {
   const [loadingScopus, setLoadingScopus] = useState(false);
@@ -29,15 +31,15 @@ const Scopus = () => {
 
     let url = "";
     if (api === "scopus") {
-      url = `http://localhost:8000/scraper/scraper-scopus-cron`;
+      url = `${configURL}scraper/scraper-scopus-cron`;
     } else if (api === "author") {
-      url = `http://localhost:8000/scraper/scraper-author-scopus/?scopus_id=${authorscopusId}`;
+      url = `${configURL}scraper/scraper-author-scopus/?scopus_id=${authorscopusId}`;
     } else if (api === "article") {
-      url = `http://localhost:8000/scraper/scraper-article-scopus/?eid=${eid}`;
+      url = `${configURL}scraper/scraper-article-scopus/?eid=${eid}`;
     } else if (api === "allArticle") {
-      url = `http://localhost:8000/scraper/scraper-articleOfauthor-scopus?scopus_id=${scopusId}` //8148419700
+      url = `${configURL}scraper/scraper-articleOfauthor-scopus?scopus_id=${scopusId}` //8148419700
     } else {
-      url = `http://localhost:8000/scraper/scraper-journal-scopus/?source_id=${sourceId}`;
+      url = `${configURL}scraper/scraper-journal-scopus/?source_id=${sourceId}`;
     }
 
     try {
@@ -111,12 +113,16 @@ const Scopus = () => {
               <p className="font-semibold text-lg">Run scraper to get authors</p>
               <div className="mt-3">
                 <form className="w-full max-w-sm">
-                  <div className="flex items-center border-b border-teal-500 py-2">
-                    <input
-                      id="scholarIdInput"
-                      className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                      type="text"
-                      placeholder="Enter Scopus ID"
+                  <div className="flex items-center py-2">
+                    <Textarea
+                      sx={{ mr: 2, width: 400 }}
+                      color="neutral"
+                      disabled={false}
+                      minRows={2}
+                      maxRows={2}
+                      placeholder="Enter author ID"
+                      size="lg"
+                      variant="soft"
                       aria-label="author"
                       value={authorscopusId}
                       onChange={(e) => setAuthorScupusId(e.target.value)}
@@ -144,19 +150,23 @@ const Scopus = () => {
         </div>
         <div className="w-1/3 bg-cyan-200 flex flex-col rounded-lg p-7 m-2">
           <div className="flex justify-between">
-            <p className="text-xl font-semibold">All Article Data</p>
+            <p className="text-xl font-semibold">All Articles of Author Data</p>
           </div>
           <div className="mt-0">
             <div className="mt-3">
-              <p className="font-semibold text-lg">Run scraper to get all articles</p>
+              <p className="font-semibold text-lg">get all articles of each author</p>
               <div className="mt-3">
                 <form className="w-full max-w-sm">
                   <div className="flex items-center border-b border-teal-500 py-2">
-                    <input
-                      id="scholarIdInput"
-                      className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                      type="text"
-                      placeholder="Enter Scopus ID"
+                    <Textarea
+                      sx={{ mr: 2, width: 400 }}
+                      color="neutral"
+                      disabled={false}
+                      minRows={2}
+                      maxRows={2}
+                      placeholder="Enter author ID"
+                      size="lg"
+                      variant="soft"
                       aria-label="author"
                       value={scopusId}
                       onChange={(e) => setScupusId(e.target.value)}
@@ -195,11 +205,15 @@ const Scopus = () => {
               <div className="mt-3">
                 <form className="w-full max-w-sm">
                   <div className="flex items-center border-b border-teal-500 py-2">
-                    <input
-                      id="scholarIdInput"
-                      className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                      type="text"
+                  <Textarea
+                      sx={{ mr: 2, width: 400 }}
+                      color="neutral"
+                      disabled={false}
+                      minRows={2}
+                      maxRows={2}
                       placeholder="Enter EID"
+                      size="lg"
+                      variant="soft"
                       aria-label="author"
                       value={eid}
                       onChange={(e) => setEid(e.target.value)}
@@ -235,11 +249,15 @@ const Scopus = () => {
               <div className="mt-3">
                 <form className="w-full max-w-sm">
                   <div className="flex items-center border-b border-teal-500 py-2">
-                    <input
-                      id="scholarIdInput"
-                      className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                      type="text"
-                      placeholder="Enter Source ID"
+                  <Textarea
+                      sx={{ mr: 2, width: 400 }}
+                      color="neutral"
+                      disabled={false}
+                      minRows={2}
+                      maxRows={2}
+                      placeholder="Enter source ID"
+                      size="lg"
+                      variant="soft"
                       aria-label="author"
                       value={sourceId}
                       onChange={(e) => setSourceId(e.target.value)}
