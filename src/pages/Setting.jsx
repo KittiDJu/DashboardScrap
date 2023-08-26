@@ -100,6 +100,7 @@ const SettingPage = () => {
                     Swal.fire('Saved!', '', 'success')
                     console.log("Sending DB URI:", databaseURI);
                     const url = `${configURL}conectionDB/connect-to-mongodb`;
+                    setfetchDBbaseURI({ ...fetchDBbaseURI, url: databaseURI });
                     try {
                         const response = await fetch(url, {
                             method: "POST",
@@ -108,16 +109,13 @@ const SettingPage = () => {
                             },
                             body: JSON.stringify({ databaseURI }),
                         });
-
+                        console.log("data",response);
                         if (!response.ok) {
                             throw new Error("Error: " + response.status);
                         }
 
                         const data = await response.json();
-                        console.log(data);
-
-                        setfetchDBbaseURI({ ...fetchDBbaseURI, url: databaseURI });
-
+                        console.log("data",data);
                         // setTerminalOutput(JSON.stringify(data, null, 2));
                     } catch (error) {
                         console.error(error);
@@ -190,9 +188,9 @@ const SettingPage = () => {
                 setfetchDBbaseURI(response1.data);
                 setfetchbaseURL(response2.data);
                 setfetchCron(response3.data);
-                console.log("aaaaa",response1.data);
-                console.log("bbbb", response2.data );
-                console.log("bbbb", response3.data );
+                console.log("aaaaa", response1.data);
+                console.log("bbbb", response2.data);
+                console.log("bbbb", response3.data);
             } catch (error) {
                 console.error('Error fetching data from APIs:', error);
             }
@@ -305,26 +303,6 @@ const SettingPage = () => {
                     </div>
                 </div>
             </div>
-
-            {/* <div className="mt-5">
-                <div className="flex flex-wrap justify-center">
-                    <div className="w-2/3 bg-black text-white rounded-lg p-6 m-2">
-                        <p className="text-lg font-semibold pb-2">Output:</p>
-                        {terminalOutput && (
-                            <ReactJson
-                                src={JSON.parse(terminalOutput)}
-                                theme="monokai"
-                                displayDataTypes={false}
-                                displayObjectSize={false}
-                                indentWidth={2}
-                                iconStyle="circle"
-                                style={{ maxHeight: "500px", overflow: "auto" }}
-                            />
-                        )}
-                    </div>
-                </div>
-            </div> */}
-
         </div>
     );
 };
