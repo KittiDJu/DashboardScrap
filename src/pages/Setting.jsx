@@ -200,7 +200,7 @@ const SettingPage = () => {
 
     return (
         <div className="mt-5">
-            <div className="flex flex-wrap justify-center">
+            {/* <div className="flex flex-wrap justify-center">
                 <div className="w-2/3 bg-blue-200 flex flex-col rounded-lg p-7 m-2">
                     <div className="flex justify-between">
                         <p className="text-xl font-semibold">
@@ -234,9 +234,9 @@ const SettingPage = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
-            <div className="mt-5">
+            {/* <div className="mt-5">
                 <div className="flex flex-wrap justify-center">
                     <div className="w-2/3 bg-blue-200 flex flex-col rounded-lg p-7 m-2">
                         <div className="flex justify-between">
@@ -272,7 +272,7 @@ const SettingPage = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             <div className="mt-5">
                 <div className="flex flex-wrap justify-center">
